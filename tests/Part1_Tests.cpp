@@ -70,28 +70,38 @@ TEST_CASE("Fibonacci", "[Problem2]") {
     SECTION("sum of even fib 11 is 188"){
         REQUIRE(sum_even_fib(11) == 188);
     }
+}
 
+// BDD implementation
 
-    SECTION("sum of even fib values lower 1 is 0"){
-        REQUIRE(sum_even_fib_max(1) == 0);
+SCENARIO("Fibonacci max limit", "[Problem2]") {
+
+    GIVEN("A limit for fibonacci result") {
+
+        WHEN("limit is 1")
+            THEN("the result is 0")
+                REQUIRE(sum_even_fib_max(1) == 0);
+
+        WHEN("limit is 2")
+            THEN("the result is 2")
+                REQUIRE(sum_even_fib_max(2) == 2);
+
+        WHEN("limit is 10")
+            THEN("the result is 23")
+                REQUIRE(sum_even_fib_max(10) == 10);
+
+        WHEN("limit is 22")
+            THEN("the result is 44")
+                REQUIRE(sum_even_fib_max(22) == 44);
+
+        WHEN("limit is 4 million")
+            THEN("the result is 4613732")
+                REQUIRE(sum_even_fib_max(4000000) == 4613732);
+
+        WHEN("limit is 10 million")
+            THEN("the result is 19544084")
+                REQUIRE(sum_even_fib_max(10000000) == 19544084);
     }
-
-    SECTION("sum of even fib values lower 2 is 2"){
-        REQUIRE(sum_even_fib_max(2) == 2);
-    }
-
-    SECTION("sum of even fib values lower 10 is 23"){
-        REQUIRE(sum_even_fib_max(10) == 10);
-    }
-
-    SECTION("sum of even fib values lower 22 is 44"){
-        REQUIRE(sum_even_fib_max(22) == 44);
-    }
-
-    SECTION("sum of even fib values lower 4 million is "){
-        REQUIRE(sum_even_fib_max(4000000) == 4613732);
-    }
-
 }
 
 
