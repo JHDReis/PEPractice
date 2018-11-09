@@ -105,4 +105,46 @@ SCENARIO("Fibonacci max limit", "[Problem2]") {
 }
 
 
+SCENARIO("Largest prime", "[Problem3]") {
+
+    GIVEN("Trial Division") {
+
+        WHEN("the number is 1")
+            THEN("the result is 1")
+                REQUIRE(largest_prime_trial_division(1) == 1);
+
+        WHEN("the number is 2")
+            THEN("The result is 2")
+                REQUIRE(largest_prime_trial_division(2) == 2);
+
+        WHEN("the number is 10")
+            THEN("The result is 7")
+                REQUIRE(largest_prime_trial_division(10) == 7);
+
+
+        WHEN("the number is 25")
+            THEN("The result is 23")
+                REQUIRE(largest_prime_trial_division(25) == 23);
+
+        WHEN("the number is 150")
+            THEN("The result is 113")
+                REQUIRE(largest_prime_trial_division(25) == 23);
+
+
+        WHEN("the number is 600851475143")
+            THEN("The result is 113")
+                REQUIRE(largest_prime_trial_division(600851475143) == 600851475067);
+
+
+    }
+
+    GIVEN("Miller-Rabin Division") {
+
+        WHEN("the number is 1")
+            THEN("the result is 1")
+                REQUIRE(largest_prime_Miller_Rabin(1) == 1);
+    }
+}
+
+
 
