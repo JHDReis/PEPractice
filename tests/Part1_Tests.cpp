@@ -2,7 +2,7 @@
 // Created by Joao Henriques David Dos Reis on 05/11/2018.
 //
 
-#include "catch.hpp"
+#include "catch2/catch_all.hpp"
 #include "Part1.h"
 
 TEST_CASE("Multiples 3 5", "[Problem1]") {
